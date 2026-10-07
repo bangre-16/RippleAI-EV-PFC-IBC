@@ -454,17 +454,13 @@ faster interactive method for analyzing converter current ripple.
 -   Web-based deployment
 -   Engineering-oriented visualization
 
-## 23. Authors
+## Author
 
-**Project:** EV PFC-IBC Current Ripple Prediction Using Machine Learning
+Darshan N S
+Nayana Venkaraddi
+Rohan H L
+Sai Sidharth Pradhan
 
-**Department:** Electrical and Electronics Engineering
+Bachelor of Engineering (B.E.) – Electrical and Electronics Engineering (EEE)
 
-**Institution:** Dayananda Sagar Academy of Technology and Management,
-Bengaluru
-
-## 24. License
-
-This project is developed for academic and research purposes. Refer to
-the project repository and institutional requirements for redistribution
-and usage conditions.
+Dayananda Sagar Academy of Technology and Management (DSATM), Bengaluru
