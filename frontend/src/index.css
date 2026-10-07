@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #06080b;
+  --panel: rgba(255,255,255,.04);
+  --line: rgba(255,255,255,.10);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(900px 550px at 8% 5%, rgba(80, 220, 255, .08), transparent 65%),
+    radial-gradient(850px 650px at 92% 10%, rgba(143, 102, 255, .09), transparent 64%),
+    radial-gradient(700px 500px at 60% 92%, rgba(83, 208, 165, .045), transparent 65%),
+    linear-gradient(150deg, #05070a 0%, #0a0d11 50%, #07090c 100%);
+  color: #f4f7f8;
+  font-family: Inter, system-ui, sans-serif;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  z-index: 50;
+}
+::selection { background: rgba(110, 230, 255, .25); color: white; }
+.font-display { font-family: 'Space Grotesk', Inter, system-ui, sans-serif; }
+.container-page { width: min(1320px, calc(100% - 40px)); margin: 0 auto; }
+.glass { background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); backdrop-filter: blur(18px); }
+.gradient-text { background: linear-gradient(90deg, #f7fbff 5%, #82eaff 45%, #b79cff 92%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.subtle-grid { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, black, transparent); }
+.nav-link { color: rgba(255,255,255,.52); transition: color .2s ease; }
+.nav-link:hover, .nav-link.active { color: white; }
+button, a { -webkit-tap-highlight-color: transparent; }
+input, button { outline: none; }
+input:focus { border-color: rgba(110,230,255,.45) !important; box-shadow: 0 0 0 4px rgba(110,230,255,.07); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #07090c; }
+::-webkit-scrollbar-thumb { background: #252b31; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #343b42; }

@@ -1,0 +1,6 @@
+Parameter,Value
+Best_Kernel_Number,2
+Optimized_Kernel,1.12**2 * RBF(length_scale=1.38) + WhiteKernel(noise_level=0.0456)
+Best_Validation_MSE,0.0012153820808615276
+Tuning_Samples,1000
+Optimizer_Restarts,3

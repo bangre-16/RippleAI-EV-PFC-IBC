@@ -1,0 +1,744 @@
+{
+  "metrics": {
+    "SVR": {
+      "baseline": {
+        "R2": 0.9383726415925512,
+        "MSE": 0.0006532792834399,
+        "RMSE": 0.0255593286969743,
+        "MAE": 0.017815587562073,
+        "MAPE": 7.268071554926755,
+        "MASE": 0.1429690092000247
+      },
+      "tuned": {
+        "R2": 0.9576150619607222,
+        "MSE": 0.0004493004838513,
+        "RMSE": 0.0211967092693971,
+        "MAE": 0.0154137963805125,
+        "MAPE": 6.540784071152885,
+        "MASE": 0.1236947807000301
+      }
+    },
+    "GPR": {
+      "baseline": {
+        "R2": 0.9550774021222384,
+        "MSE": 0.000476200883994,
+        "RMSE": 0.021822027495035,
+        "MAE": 0.0163182864772981,
+        "MAPE": 6.814523098287633,
+        "MASE": 0.1309532588455367
+      },
+      "tuned": {
+        "R2": 0.952152530227072,
+        "MSE": 0.0005072059159345,
+        "RMSE": 0.0225212325580663,
+        "MAE": 0.0169113271037299,
+        "MAPE": 7.028553340927108,
+        "MASE": 0.1357123738890852
+      }
+    },
+    "Random Forest": {
+      "baseline": {
+        "R2": 0.915443340225352,
+        "MSE": 0.0008963407735643,
+        "RMSE": 0.0299389507759431,
+        "MAE": 0.0237105137089975,
+        "MAPE": 9.04271685050104,
+        "MASE": 0.190275433846232
+      },
+      "tuned": {
+        "R2": 0.9124044768547316,
+        "MSE": 0.0009285541693115,
+        "RMSE": 0.0304721868153813,
+        "MAE": 0.0240492553453172,
+        "MAPE": 9.203804046951284,
+        "MASE": 0.1929938149240765
+      }
+    },
+    "XGBoost": {
+      "baseline": {
+        "R2": 0.924283063906326,
+        "MSE": 0.0008026355020527,
+        "RMSE": 0.0283308224739897,
+        "MAE": 0.0225680802380115,
+        "MAPE": 8.846587089491736,
+        "MASE": 0.1811074745603129
+      },
+      "tuned": {
+        "R2": 0.8898913359845362,
+        "MSE": 0.0011672041604149,
+        "RMSE": 0.0341643697500029,
+        "MAE": 0.0269816484011979,
+        "MAPE": 10.773196950163303,
+        "MASE": 0.216526091270483
+      }
+    },
+    "KNN": {
+      "baseline": {
+        "R2": 0.8753621195519259,
+        "MSE": 0.0013212207586485,
+        "RMSE": 0.0363486005046761,
+        "MAE": 0.027875957299702,
+        "MAPE": 11.096977955033283,
+        "MASE": 0.2237028659175387
+      },
+      "tuned": {
+        "R2": 0.8753621195519259,
+        "MSE": 0.0013212207586485,
+        "RMSE": 0.0363486005046761,
+        "MAE": 0.027875957299702,
+        "MAPE": 11.096977955033283,
+        "MASE": 0.2237028659175387
+      }
+    },
+    "Stacked Ensemble": {
+      "baseline": {
+        "R2": 0.959500183225064,
+        "MSE": 0.0004293173026702,
+        "RMSE": 0.0207199735200187,
+        "MAE": 0.0153801571602593,
+        "MAPE": 6.316564378355745,
+        "MASE": 0.1234248279986047
+      },
+      "tuned": {
+        "R2": 0.9608293377793172,
+        "MSE": 0.0004152276328025,
+        "RMSE": 0.0203771350489344,
+        "MAE": 0.0151165323583758,
+        "MAPE": 6.23983279688919,
+        "MASE": 0.1213092549592919
+      }
+    }
+  },
+  "hyper": {
+    "SVR": {
+      "baseline": [],
+      "tuned": [
+        {
+          "svr__kernel": "rbf"
+        },
+        {
+          "svr__gamma": "scale"
+        },
+        {
+          "svr__epsilon": "0.005"
+        },
+        {
+          "svr__C": "10"
+        }
+      ]
+    },
+    "GPR": {
+      "baseline": [],
+      "tuned": [
+        {
+          "Best_Kernel_Number": "2"
+        },
+        {
+          "Optimized_Kernel": "1.12**2 * RBF(length_scale=1.38) + WhiteKernel(noise_level=0.0456)"
+        },
+        {
+          "Best_Validation_MSE": "0.0012153820808615276"
+        },
+        {
+          "Tuning_Samples": "1000"
+        },
+        {
+          "Optimizer_Restarts": "3"
+        }
+      ]
+    },
+    "Random Forest": {
+      "baseline": [],
+      "tuned": [
+        {
+          "n_estimators": "300"
+        },
+        {
+          "min_samples_split": "5"
+        },
+        {
+          "min_samples_leaf": "2"
+        },
+        {
+          "max_features": "1.0"
+        },
+        {
+          "max_depth": "20"
+        },
+        {
+          "bootstrap": "True"
+        }
+      ]
+    },
+    "XGBoost": {
+      "baseline": [],
+      "tuned": [
+        {
+          "subsample": "0.9"
+        },
+        {
+          "reg_lambda": "2.0"
+        },
+        {
+          "reg_alpha": "0.1"
+        },
+        {
+          "n_estimators": "400.0"
+        },
+        {
+          "min_child_weight": "1.0"
+        },
+        {
+          "max_depth": "3.0"
+        },
+        {
+          "learning_rate": "0.08"
+        },
+        {
+          "gamma": "0.0"
+        },
+        {
+          "colsample_bytree": "0.8"
+        }
+      ]
+    },
+    "KNN": {
+      "baseline": [],
+      "tuned": [
+        {
+          "knn__weights": "distance"
+        },
+        {
+          "knn__p": "2"
+        },
+        {
+          "knn__n_neighbors": "5"
+        },
+        {
+          "knn__leaf_size": "30"
+        },
+        {
+          "knn__algorithm": "auto"
+        }
+      ]
+    },
+    "Stacked Ensemble": {
+      "baseline": [],
+      "tuned": [
+        {
+          "Meta_Model": "RidgeCV"
+        },
+        {
+          "Best_Ridge_Alpha": "0.01"
+        },
+        {
+          "SVR_Coefficient": "0.6606658536326521"
+        },
+        {
+          "GPR_Coefficient": "0.0036765221991768558"
+        },
+        {
+          "RandomForest_Coefficient": "0.3665870887050349"
+        }
+      ]
+    }
+  },
+  "importance": {
+    "SVR": {
+      "baseline": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 3.077589473713808,
+          "raw_drop": 0.8848154373673701
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 9.463720062074668,
+          "raw_drop": 2.7208455440102135
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 39.52424044115974,
+          "raw_drop": 11.363327822393622
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 9.975190447733347,
+          "raw_drop": 2.8678946864810997
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 0.21409608358645169,
+          "raw_drop": 0.06155321281645484
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 37.74516349173197,
+          "raw_drop": 10.851838306796026
+        }
+      ],
+      "tuned": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 8.40226942756934,
+          "raw_drop": 0.6524792566544129
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 26.000793057538296,
+          "raw_drop": 2.0190947544413054
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 29.3146969965593,
+          "raw_drop": 2.2764363687987093
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 11.514607523544036,
+          "raw_drop": 0.8941682508987029
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 0.7542017116721422,
+          "raw_drop": 0.05856762585887265
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 24.013431283116894,
+          "raw_drop": 1.864765933584511
+        }
+      ]
+    },
+    "GPR": {
+      "baseline": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 6.659519924607656,
+          "raw_drop": 0.6870667210445216
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 22.346774063491473,
+          "raw_drop": 2.3055302717831285
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 29.81423321054917,
+          "raw_drop": 3.0759525738089195
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 10.575427589012618,
+          "raw_drop": 1.091073296496631
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 0.5230135972968865,
+          "raw_drop": 0.05395963093805781
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 30.081031615042196,
+          "raw_drop": 3.1034783274713704
+        }
+      ],
+      "tuned": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 15.74504600315754,
+          "raw_drop": 0.6194685864417707
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 50.26737647224224,
+          "raw_drop": 1.977705282102799
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 13.304418144942012,
+          "raw_drop": 0.5234452220733223
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 9.55850323546325,
+          "raw_drop": 0.37606701730716224
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.310136714076311,
+          "raw_drop": 0.051545644144295376
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 9.814519430118631,
+          "raw_drop": 0.38613964524216887
+        }
+      ]
+    },
+    "Random Forest": {
+      "baseline": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 19.660409312135414,
+          "raw_drop": 0.47252431639030396
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 71.67315428275053,
+          "raw_drop": 1.7226146054898681
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 1.0005648186208322,
+          "raw_drop": 0.02404788218885993
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 5.033173233998015,
+          "raw_drop": 0.12096883151872533
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.3451077503732667,
+          "raw_drop": 0.03232873284200166
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 1.2875906021219214,
+          "raw_drop": 0.030946348033695004
+        }
+      ],
+      "tuned": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 19.468880286553684,
+          "raw_drop": 0.46023380268554764
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 72.34417997094312,
+          "raw_drop": 1.7101772962870578
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 0.5674066151511337,
+          "raw_drop": 0.013413185571863587
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 5.02759267939136,
+          "raw_drop": 0.11884957240136691
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.3813898245391443,
+          "raw_drop": 0.03265530850163301
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 1.2105506234215657,
+          "raw_drop": 0.028616762164049958
+        }
+      ]
+    },
+    "XGBoost": {
+      "baseline": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 20.41549165524813,
+          "raw_drop": 0.4907724317231457
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 69.8431853275394,
+          "raw_drop": 1.6789754800578296
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 1.9289024993022386,
+          "raw_drop": 0.04636930553156974
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 5.6815834343866225,
+          "raw_drop": 0.13658081643187223
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.401572527365122,
+          "raw_drop": 0.03369270596598698
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 0.7292645561584934,
+          "raw_drop": 0.01753094883234907
+        }
+      ],
+      "tuned": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 18.62653769518458,
+          "raw_drop": 0.4194050866265697
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 73.27320577086661,
+          "raw_drop": 1.6498586971255287
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 1.5846337725531443,
+          "raw_drop": 0.03568046168992833
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 5.103098725713465,
+          "raw_drop": 0.11490410070547381
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.2150539846528232,
+          "raw_drop": 0.02735880548648717
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 0.1974700510293797,
+          "raw_drop": 0.0044463413015045266
+        }
+      ]
+    },
+    "KNN": {
+      "baseline": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 20.360527825641427,
+          "raw_drop": 0.47021112476243604
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 68.86608139598006,
+          "raw_drop": 1.5904105172757292
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 1.7185880487667522,
+          "raw_drop": 0.03968950246939077
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 5.834944457432717,
+          "raw_drop": 0.13475366747616946
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.291551627301405,
+          "raw_drop": 0.029827416487569185
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 1.9283066448776451,
+          "raw_drop": 0.04453279620938474
+        }
+      ],
+      "tuned": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 20.360527825641427,
+          "raw_drop": 0.47021112476243604
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 68.86608139598006,
+          "raw_drop": 1.5904105172757292
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 1.7185880487667522,
+          "raw_drop": 0.03968950246939077
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 5.834944457432717,
+          "raw_drop": 0.13475366747616946
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.291551627301405,
+          "raw_drop": 0.029827416487569185
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 1.9283066448776451,
+          "raw_drop": 0.04453279620938474
+        }
+      ]
+    },
+    "Stacked Ensemble": {
+      "baseline": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 7.88539293487385,
+          "raw_drop": 0.6388189982664296
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 26.505191457323036,
+          "raw_drop": 2.1472639341463466
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 28.59398188530668,
+          "raw_drop": 2.316483023139578
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 9.543117786625453,
+          "raw_drop": 0.7731161902952333
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 0.5900732665137944,
+          "raw_drop": 0.047803580129919365
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 26.882242669357183,
+          "raw_drop": 2.1778099677500165
+        }
+      ],
+      "tuned": [
+        {
+          "feature": "Switching_Freq_Hz",
+          "label": "Switching Freq Hz",
+          "importance": 12.10218583135347,
+          "raw_drop": 0.6030174417548212
+        },
+        {
+          "feature": "Load_Resistance_Ohm",
+          "label": "Load Resistance Ohm",
+          "importance": 39.42079147969926,
+          "raw_drop": 1.964225732549339
+        },
+        {
+          "feature": "Vin_RMS_V",
+          "label": "Vin RMS V",
+          "importance": 21.384419915531115,
+          "raw_drop": 1.0655247217793107
+        },
+        {
+          "feature": "Duty_Cycle_Pct",
+          "label": "Duty Cycle Pct",
+          "importance": 10.054119978591936,
+          "raw_drop": 0.5009681550980202
+        },
+        {
+          "feature": "Inductance_uH",
+          "label": "Inductance uH",
+          "importance": 1.0113266991079937,
+          "raw_drop": 0.0503915282224886
+        },
+        {
+          "feature": "Vout_DC_V",
+          "label": "Vout DC V",
+          "importance": 16.027156095716233,
+          "raw_drop": 0.7985875280815389
+        }
+      ]
+    }
+  },
+  "images": {
+    "SVR|baseline": "svr_baseline.png",
+    "SVR|tuned": "svr_tuned.png",
+    "GPR|baseline": "gpr_baseline.png",
+    "GPR|tuned": "gpr_tuned.png",
+    "Random Forest|baseline": "random_forest_baseline.png",
+    "Random Forest|tuned": "random_forest_tuned.png",
+    "XGBoost|baseline": "xgboost_baseline.png",
+    "XGBoost|tuned": "xgboost_tuned.png",
+    "KNN|baseline": "knn_baseline.png",
+    "KNN|tuned": "knn_tuned.png",
+    "Stacked Ensemble|baseline": "stacked_ensemble_baseline.png",
+    "Stacked Ensemble|tuned": "stacked_ensemble_tuned.png"
+  },
+  "model_zips": {
+    "SVR|baseline": "SVR_Without_Tuning.zip",
+    "SVR|tuned": "SVR_With_Tuning.zip",
+    "GPR|baseline": "GPR_Without_Tuning.zip",
+    "GPR|tuned": "GPR_With_Tuning.zip",
+    "Random Forest|baseline": "Random_Forest_Without_Tuning.zip",
+    "Random Forest|tuned": "Random_Forest_With_Tuning.zip",
+    "XGBoost|baseline": "XGBoost_Without_Tuning.zip",
+    "XGBoost|tuned": "XGBoost_With_Tuning.zip",
+    "KNN|baseline": "KNN_Without_Tuning.zip",
+    "KNN|tuned": "KNN_With_Tuning.zip",
+    "Stacked Ensemble|baseline": "Stacked_Ensemble_Without_Tuning.zip",
+    "Stacked Ensemble|tuned": "Stacked_Ensemble_With_Tuning.zip"
+  }
+}

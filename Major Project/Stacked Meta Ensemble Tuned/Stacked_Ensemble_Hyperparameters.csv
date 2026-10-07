@@ -1,0 +1,6 @@
+Parameter,Value
+Meta_Model,RidgeCV
+Best_Ridge_Alpha,0.01
+SVR_Coefficient,0.6606658536326521
+GPR_Coefficient,0.0036765221991768558
+RandomForest_Coefficient,0.3665870887050349

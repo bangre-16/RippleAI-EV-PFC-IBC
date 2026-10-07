@@ -1,0 +1,6 @@
+Parameter,Best_Value
+knn__weights,distance
+knn__p,2
+knn__n_neighbors,5
+knn__leaf_size,30
+knn__algorithm,auto
